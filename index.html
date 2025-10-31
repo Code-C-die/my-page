@@ -4,7 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>나의 첫 웹페이지</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- ✅ CSS 자동 캐시 무시 -->
+    <link id="cssFile" rel="stylesheet" href="style.css" />
+
+    <!-- ✅ JS 자동 캐시 무시 -->
+    <script>
+      // CSS 캐시 무시
+      const css = document.getElementById("cssFile");
+      css.href = "style.css?v=" + new Date().getTime();
+
+      // JS 캐시 무시
+      const script = document.createElement("script");
+      script.src = "script.js?v=" + new Date().getTime();
+      document.head.appendChild(script);
+    </script>
   </head>
   <body>
     <h1>안녕하세요 👋</h1>
