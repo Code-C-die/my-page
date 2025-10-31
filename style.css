@@ -3,6 +3,8 @@ body {
   background-color: #f0f8ff; /* 하늘색 */
   font-family: "Apple SD Gothic Neo", sans-serif;
   text-align: center;
+  /* ✅ 배경색이 부드럽게 바뀌도록 추가 */
+  transition: background-color 1.5s ease;
 }
 
 /* 제목 글자 */
