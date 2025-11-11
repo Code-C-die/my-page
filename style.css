@@ -82,3 +82,37 @@ button:active {
 .hidden {
   opacity: 0;
 }
+/* 카드 레이아웃 */
+.card {
+  width: 320px;
+  margin: 40px auto;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 카드 호버 효과 */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 카드 안 이미지 */
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* 카드 제목 */
+.card h2 {
+  color: #333;
+  margin: 15px 0 10px;
+}
+
+/* 카드 내용 */
+.card p {
+  color: #666;
+  font-size: 16px;
+}
