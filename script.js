@@ -29,3 +29,42 @@ function changeColor() {
   // body 배경색 변경 (부드럽게 변함)
   document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 }
+//---Modal 기능추가---
+document.addEventListener("DOMContentLoaded", () => {
+  const Modal = doucument.getElementById("modal");
+  const modalImg = document.getElementById("modalImg");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalClose = document.getElementById("modalClose");
+
+  // 모든 카드에 클릭 이벤트 연결
+  document.querySelectorAll(".card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const img = card.querySelector("img");
+      const title = card.querySelector("h2");
+
+      // 카드의 이미지/제목을 모달에 채우기
+      if (img) modalImg.src = img.src;
+      if (title) modalTitle.textContent = title.textContent;
+
+      // 모달 열기
+      modal.classList.remove("hidden");
+    });
+  });
+
+  // 닫기(X) 버튼으로 닫기
+  modal.addEventListener("click", (e) => {
+    // 바깥(검은 배경) 클릭 또는 X 클릭 시 닫기
+    if (e.target === modal || e.target === modalClose) {
+      modal.classList.add("hidden");
+      // ESC로 재오픈 시 이전 상태 남지 않게 포커스/transition 안정화
+      modalImg.blur();
+    }
+  });
+
+  // ESC 키로 닫기
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      modal.classList.add("hidden");
+    }
+  });
+});

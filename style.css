@@ -158,3 +158,55 @@ button:active {
   font-size: 15px;
   line-height: 1.5;
 }
+/*-------------------------*/
+/*모델 (Modal 스타일 시작 */
+/*-------------------------*/
+
+/*모델 전체레이어 (화면을 덮는 어두운 배경)*/
+.madal {
+  position: fixed;
+  inset: 0; /* top, right, bottom, left =0 과 같음*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6); /*반투명 검정 배경*/
+  z-index: 1000; /*다른요소위에 표시*/
+}
+/* 숨김 상태(처음엔 안보이게)*/
+.modal.hidden {
+  display: none;
+}
+/* 모달 안의 내용 상자 */
+.modal-content {
+  width: 90%;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+}
+
+/* 모달 안의 이미지 */
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* 닫기 버튼 (오른쪽 위 X 표시) */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ----------------------------- */
+/* 모달(Modal) 스타일 끝 */
+/* ----------------------------- */
